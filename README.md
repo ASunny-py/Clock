@@ -14,3 +14,6 @@ I have fixed the custom tinter problem, but I now have to work on the next probl
 
 Update 4:
 I have added the up to date version of Clock_main1.py, because I realised it wouldn't actually update 😭
+
+Update 5:
+It WORKS!! Honestly, I feel so happy right now. There is a functional clock and date that came from this program. 
