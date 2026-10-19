@@ -8,3 +8,6 @@ The new file is clock_main1, and this is me using a more up to date library, or 
 
 Update 2:
 I have continued to work on clock_main1 and I have minimised all of the bugs. Now I just have to figure out why vs code can't see customtkinter and import it. 
+
+Update 3:
+I have fixed the custom tinter problem, but I now have to work on the next problem. None of my visuals are coming up besides the window/widget itself. 
