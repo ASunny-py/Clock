@@ -11,3 +11,6 @@ I have continued to work on clock_main1 and I have minimised all of the bugs. No
 
 Update 3:
 I have fixed the custom tinter problem, but I now have to work on the next problem. None of my visuals are coming up besides the window/widget itself. 
+
+Update 4:
+I have added the up to date version of Clock_main1.py, because I realised it wouldn't actually update 😭
