@@ -17,3 +17,6 @@ I have added the up to date version of Clock_main1.py, because I realised it wou
 
 Update 5:
 It WORKS!! Honestly, I feel so happy right now. There is a functional clock and date that came from this program. 
+
+Update 6:
+Added timezones and multiple clocks. Though instead of making a button it has instead shifted the time and date to the right.
