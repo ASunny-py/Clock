@@ -1,8 +1,12 @@
+import sys
+
+sys.path.append('/Users/akhilupadhyaya/Library/Python/3.11/lib/python/site-packages')
+
 import os
 
 os.environ['TK_SILENCE_DEPRECATION'] = '1'
 
-import customtkinter as ctk
+import tkinter as tk
 import time
 from time import strftime
 
@@ -19,33 +23,33 @@ def update_date():
     date_label.after(60000, update_date)
 
 # Basic theme
-cor1 = "#191970" # Midnight Blue
+cor1 = "#0B123B" # Midnight Blue
 cor2 = "#EAA221" # Marigold
 
-ctk.set_appearance_mode('dark')
-ctk.set_default_color_theme('blue')
+window_width = 770
+window_height = 550
 
-window_width = 550
-window_height = 330
-
-root = ctk.CTk()
+root = tk.Tk()
 root.title("Clock")
 root.geometry(f"{window_width}x{window_height}")
 root.resizable(False, False)
 
-time_label = ctk.CTkLabel(
+bg_colour = cor1
+root.configure(bg=bg_colour)
+
+time_label = tk.Label(
     master=root,
     text="",
     font=("Comic Sans MS", 48, "italic"),
-    text_color=cor2,
+    foreground=cor2,
 )
 time_label.pack(expand=True)
 
-date_label = ctk.CTkLabel(
+date_label = tk.Label(
     master=root,
     text="",
-    font=("Comic Sans MS", 60, "bold"),
-    text_color=cor2,
+    font=("Comic Sans MS", 32, "bold"),
+    foreground=cor2,
 )
 date_label.pack(expand=True)
 
