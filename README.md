@@ -20,3 +20,6 @@ It WORKS!! Honestly, I feel so happy right now. There is a functional clock and 
 
 Update 6:
 Added timezones and multiple clocks. Though instead of making a button it has instead shifted the time and date to the right.
+
+Update 7:
+Fixed the shifting issue and got my buttons. Now I have to remove any final bugs that may exist. Besides that we're actually almost done.
