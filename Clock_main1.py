@@ -41,8 +41,7 @@ max_clocks = 5
 current_theme = "Marigold Night"
 
 class ClockWidget:
-    """The master template blueprint for creating independent clock units."""
-    
+
     def __init__(self, parent_container):
         colors = Themes[current_theme]
         # This builds the individual visual box container for a single clock instance
@@ -127,7 +126,7 @@ class ClockWidget:
             min_angle = minutes * 6 + seconds * 0.1
             hour_angle = hours * 30 + minutes * 0.5
 
-            self.draw_hand(hour_angle, 32, 4, colors["text'"])
+            self.draw_hand(hour_angle, 32, 4, colors["text"])
             self.draw_hand(min_angle, 45, 2.5, colors["text"])
             self.draw_hand(sec_angle, 50, 1, colors["accent"])
 
@@ -147,13 +146,14 @@ class ClockWidget:
             self.toggle_btn.config(text="Switch to Analogue")
         self.refresh_time()
 
+
     def on_tz_change(self, event):
         self.current_tz_name = self.tz_dropdown.get()
         self.refresh_time()
 
     def update_widget_colors(self):
         colors = Themes[current_theme]
-        self.conttainer.configure(bg=colors["bg"], highlightbackground=colors["accent"])
+        self.container.configure(bg=colors["bg"], highlightbackground=colors["accent"])
         self.left_panel.configure(bg=colors["bg"])
         self.digital_frame.configure(bg=colors["bg"])
         self.right_panel.configure(bg=colors["bg"])
@@ -164,7 +164,7 @@ class ClockWidget:
 
 def master_ticker():
     for clock in active_clocks:
-        clock.refresh_time()
+        clock.refresh_time,
         root.after(1000, master_ticker)
 
 def add_new_clock():
@@ -232,7 +232,7 @@ for name in Themes.keys():
     text=name.split()[0],
     command=lambda n=name: apply_global_theme(n),
     highlightbackground=initial_colors["bg"],
-    font=("AppleSystemUIFont", 12)
+    font=("Comic Sans MS", 12)
     )
 theme_btn.pack(side="right", padx=2)
 
