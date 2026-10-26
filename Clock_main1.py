@@ -40,7 +40,7 @@ Timezones = {
 }
 
 window_width = 1280
-window_height = 720
+window_height = 640
 
 active_clocks = []
 max_clocks = 10
@@ -71,7 +71,7 @@ class ClockWidget:
             bd=0
         )
         self.container.pack(fill="x", padx=15, pady=10, ipady=5)
-
+                                                                                                                                                                                                                                                                                                                                                                                         
         # Track individual settings states inside this specific instance
         self.current_tz_name = "Local Time"
         self.current_view = "Digital"
@@ -99,7 +99,7 @@ class ClockWidget:
             text="Switch to Analogue",
             command=self.toggle_view,
             highlightbackground=colors["accent"],
-            font=(".AppleSystemUIFont", 24, "bold"),
+            font=(".Comci Sans MS", 24, "bold"),
         )
         self.toggle_btn.pack(anchor="w", pady=(5, 0))
 
@@ -107,9 +107,9 @@ class ClockWidget:
             self.left_panel,
             text="Remove",
             command=self.remove_self,
-            bg=colors["bg"],
-            fg=colors["text"],
-            highlightbackground=colors["accent"],
+            bg=colors["accent"],
+            fg=colors["bg"],
+            highlightbackground=colors["text"],
             font=("Comic Sans MS", 12, "bold"),
         )
         self.remove_btn.pack(anchor="w", pady=(5, 0))
@@ -135,7 +135,7 @@ class ClockWidget:
 
     def draw_clock_face(self, colors):
         self.dial_canvas.delete("all")
-        self.dial_canvas.create_oval(5, 5, 115, 115, fill=colors["face"], outline=colors["text"], width=2)
+        self.dial_canvas.create_oval(7.5, 7.5, 120, 120, fill=colors["face"], outline=colors["text"], width=2)
 
         for minute in range(60):
             mark_angle = minute * 6
@@ -204,6 +204,29 @@ class ClockWidget:
     def on_tz_change(self, event):
         self.current_tz_name = self.tz_dropdown.get()
         self.refresh_time()
+
+def update_widget_colors(self):
+    colors = Themes[current_theme]
+    self.container.coonfigure(
+        bg = colors["bg"],
+        highlightbackground=colors["accent"]
+    )
+    self.left_panel.configure(bg=colors["bg"])
+    self.digital_frame.configure(bg=colors["bg"])
+    self.right_panel.configure(bg=colors["bg"])
+    self.time_label.configure(bg=colors["bg"], fg=colors["text"])
+    self.date_label.configure(bg=colors["bg"], fg=colors["text"])
+    self.dial_canvas.configure(bg=colors["bg"])
+    self.toggle_btn.configure(
+        bg=colors["bg"],
+        fg=colors["text"],
+        highlightbackground=colors["accent"],
+    )
+    self.remove_btn.configure(
+        bg=colors["accent"],
+        fg=colors["bg"],
+        highlightbackground=colors["text"]
+    )
 
 def save_custom_themes():
     try:
@@ -384,6 +407,11 @@ canvas_container.configure(yscrollcommand=scrollbar.set)
 
 canvas_container.pack(side="left", fill="both", expand=True, padx=[20,0])
 scrollbar.pack(side="right", fill="y")
+
+def scroll_wheel(event):
+    canvas_container.yview_scroll(-1 if event.delta > 0 else 1, "units")
+
+root.bind_all("<MouseWheel>", scroll_wheel)
 
 add_new_clock()
 master_ticker()
