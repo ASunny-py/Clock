@@ -23,3 +23,6 @@ Added timezones and multiple clocks. Though instead of making a button it has in
 
 Update 7:
 Fixed the shifting issue and got my buttons. Now I have to remove any final bugs that may exist. Besides that we're actually almost done.
+
+Update 8:
+All of the logic works, which is great cus no more bugs hopefully. I am now going to work on final features and other stuff, will post final product when done.
