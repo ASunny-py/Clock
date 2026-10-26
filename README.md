@@ -26,3 +26,6 @@ Fixed the shifting issue and got my buttons. Now I have to remove any final bugs
 
 Update 8:
 All of the logic works, which is great cus no more bugs hopefully. I am now going to work on final features and other stuff, will post final product when done.
+
+Update 9:
+Finally done with this project! It was honestly eye opening as to how far behind I am and it was a great journey getting this done.
